@@ -1,0 +1,21 @@
+node_modules
+dist
+dist-ssr
+
+# local env files — never commit
+.env
+.env.local
+.env.*.local
+
+# vercel
+.vercel
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json

@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+/* ── 디자인 토큰 (claude-code-prompt.md 디자인 시스템) ─────────────── */
+@theme {
+  --color-coral: #ff6b6b;
+  --color-coral-soft: #ffe5e5;
+  --color-coral-dark: #e84b4b;
+  --color-yellow: #ffd93d;
+  --color-yellow-soft: #fff5cc;
+  --color-green: #4ade80;
+  --color-green-soft: #dcfce7;
+  --color-blue: #60a5fa;
+  --color-blue-soft: #dbeafe;
+  --color-purple: #a78bfa;
+  --color-purple-soft: #ede9fe;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #4a4a4a;
+  --color-ink-muted: #8e8e8e;
+  --color-bg: #fafaf7;
+  --color-card: #ffffff;
+  --color-border: #edede8;
+
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  --animate-bar-pulse: bar-pulse 1.5s infinite;
+  --animate-slide-up: slide-up 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-slide-in: slide-in 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-fade-in: fade-in 0.18s ease-out;
+}
+
+@keyframes bar-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* 하단 슬라이드 시트 */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 우측 슬라이드 패널 / 상세 화면 */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── base ──────────────────────────────────────────────────────────── */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  /* 모바일 폭보다 넓은 화면에서는 앱을 가운데 두기 위한 배경 */
+  background: linear-gradient(135deg, #f0eee8 0%, #e8e5dd 100%);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 스크롤바 숨김 유틸 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
