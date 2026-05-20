@@ -89,7 +89,7 @@ export function Sidebar({
                 </div>
                 <div className="mt-1.5 flex items-center gap-1.5 text-[11px] font-bold">
                   {p.star_count > 0 && <span className="text-[#B45309]">❤️{p.star_count}</span>}
-                  {p.bridge_count > 0 && <span className="text-purple">🌉{p.bridge_count}</span>}
+                  {p.bridge_count > 0 && <span className="text-purple">🔗{p.bridge_count}</span>}
                   {p.verified_count > 0 && (
                     <span className="text-[#166534]">✅{p.verified_count}</span>
                   )}

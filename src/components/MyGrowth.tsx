@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchGrowth, type GrowthStats } from '../lib/queries'
 import type { User } from '../types'
 
-/** [5] 내 성장 — 주간 바차트 + 작성/❤️/🌉/🌱 + 도움 횟수 (순위 표시 없음) */
+/** [5] 내 성장 — 주간 바차트 + 작성/❤️/🔗/🌱 + 도움 횟수 (순위 표시 없음) */
 export function MyGrowth({ user, refreshSignal }: { user: User; refreshSignal: number }) {
   const [stats, setStats] = useState<GrowthStats | null>(null)
 
@@ -44,7 +44,7 @@ export function MyGrowth({ user, refreshSignal }: { user: User; refreshSignal: n
             ❤️ <span className="text-[13px] font-black text-ink">{stats?.stars ?? 0}</span>
           </span>
           <span>
-            🌉 <span className="text-[13px] font-black text-ink">{stats?.bridges ?? 0}</span>
+            🔗 <span className="text-[13px] font-black text-ink">{stats?.bridges ?? 0}</span>
           </span>
           <span>
             🌱 <span className="text-[13px] font-black text-ink">{stats?.questions ?? 0}</span>

@@ -62,7 +62,7 @@ export function PostDetail({
           </span>
           {post.bridge_count > 0 && (
             <span className="ml-auto rounded-md bg-purple-soft px-2 py-0.5 text-[10px] font-extrabold text-[#5B21B6]">
-              🌉 직군 횡단 {post.bridge_count}
+              🔗 직군 횡단 {post.bridge_count}
             </span>
           )}
         </div>
