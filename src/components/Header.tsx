@@ -32,7 +32,7 @@ export function Header({
         <div className="flex h-7 w-7 rotate-[-5deg] items-center justify-center rounded-[9px] bg-coral text-sm shadow-[0_2px_8px_rgba(255,107,107,0.3)]">
           💡
         </div>
-        <span className="text-[17px] font-extrabold tracking-tight">RE:LAY</span>
+        <span className="text-[17px] font-extrabold tracking-tight">Itda</span>
       </div>
 
       <div className="flex items-center gap-1">

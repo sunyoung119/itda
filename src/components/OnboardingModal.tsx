@@ -48,7 +48,7 @@ export function OnboardingModal({ onComplete }: { onComplete: (u: User) => void 
           </div>
         </div>
         <h1 className="mt-3 text-center text-lg font-extrabold tracking-tight">
-          RE:LAY에 오신 걸 환영해요
+          Itda에 오신 걸 환영해요
         </h1>
         <p className="mt-1 text-center text-[13px] font-medium text-ink-muted">
           현장의 노하우를 함께 모아요

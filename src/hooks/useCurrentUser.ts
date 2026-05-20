@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import type { User } from '../types'
 
-const STORAGE_KEY = 'relay:user-id'
+const STORAGE_KEY = 'itda:user-id'
 
 /**
  * 현재 사용자 식별 (MVP: 인증 없음).

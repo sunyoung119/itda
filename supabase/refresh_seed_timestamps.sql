@@ -1,5 +1,5 @@
 -- ════════════════════════════════════════════════════════════════════
---  RE:LAY — 시드 데이터 timestamp 갱신 함수
+--  Itda — 시드 데이터 timestamp 갱신 함수
 --
 --  Supabase SQL Editor 에서 1회 실행하여 함수를 생성한다.
 --  이후 Vercel Cron(매일 KST 00:00)이 /api/reseed 를 호출하면

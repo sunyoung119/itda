@@ -14,7 +14,7 @@ function devApiPlugin(): Plugin {
     '/api/reseed': '/api/reseed.ts',
   }
   return {
-    name: 'relay-dev-api',
+    name: 'itda-dev-api',
     apply: 'serve',
     configureServer(server) {
       for (const [route, modulePath] of Object.entries(routes)) {

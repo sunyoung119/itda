@@ -13,7 +13,7 @@ When asked to build the project, follow Phase 1 → 2 → 3 in `claude-code-prom
 
 ## What is being built
 
-**RE:LAY** — a mobile-first web app for a 119 emergency call center (~120 staff in three roles: 접수/관제/보고). Staff type work know-how ("tacit knowledge") in free-form Korean; Gemini structures it into a title, summary, tags, and categories.
+**Itda** — a mobile-first web app for a 119 emergency call center (~120 staff in three roles: 접수/관제/보고). Staff type work know-how ("tacit knowledge") in free-form Korean; Gemini structures it into a title, summary, tags, and categories.
 
 ## Planned stack & commands
 
