@@ -8,7 +8,7 @@ const REACTIONS: { value: 'all' | ReactionType; label: string }[] = [
   { value: 'all', label: '전체' },
   { value: 'star', label: '❤️ 유용' },
   { value: 'verified', label: '✅ 검증' },
-  { value: 'question', label: '🌱 의문' },
+  { value: 'question', label: '🌱 키우기' },
 ]
 
 function Chip({

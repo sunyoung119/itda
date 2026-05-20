@@ -27,9 +27,9 @@ const META: {
   {
     type: 'question',
     emoji: '🌱',
-    label: '상황 다름',
-    desc: '내 케이스에선 다른 결과였어요',
-    active: 'border-blue bg-blue-soft',
+    label: '같이 키워봐요',
+    desc: '아직 검증 전이지만 좋은 아이디어예요',
+    active: 'border-green bg-green-soft',
   },
 ]
 
