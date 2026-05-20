@@ -3,14 +3,14 @@ import { fetchTopPosts, isFilterActive, type PostWithAuthor } from '../lib/queri
 import type { FilterState, Post } from '../types'
 import { RoleBadge } from './RoleBadge'
 
-/** 줄 끝 반응 카운트 — ⭐ / 🌉 / ✅ / ❓ */
+/** 줄 끝 반응 카운트 — ❤️ / 🌉 / ✅ / 🌱 */
 function Reactions({ post }: { post: Post }) {
   return (
     <div className="flex flex-shrink-0 items-center gap-1.5 text-[11px] font-bold">
-      {post.star_count > 0 && <span className="text-[#B45309]">⭐{post.star_count}</span>}
+      {post.star_count > 0 && <span className="text-[#B45309]">❤️{post.star_count}</span>}
       {post.bridge_count > 0 && <span className="text-purple">🌉</span>}
       {post.verified_count > 0 && <span className="text-[#166534]">✅{post.verified_count}</span>}
-      {post.question_count > 0 && <span className="text-[#1E40AF]">❓{post.question_count}</span>}
+      {post.question_count > 0 && <span className="text-[#1E40AF]">🌱{post.question_count}</span>}
       {post.star_count === 0 &&
         post.verified_count === 0 &&
         post.question_count === 0 && <span className="text-ink-muted">반응하기</span>}

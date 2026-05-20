@@ -23,8 +23,8 @@ export interface ToggleResult {
 /**
  * 반응 토글 규칙(claude-code-prompt.md 반응 무결성):
  * - 이미 누른 반응을 다시 누르면 해제(토글)
- * - ⭐ + ✅ 는 양립 가능
- * - ❓ 를 새로 누르면 같은 글의 ⭐ 는 자동 해제
+ * - ❤️ + ✅ 는 양립 가능
+ * - 🌱 을 새로 누르면 같은 글의 ❤️ 는 자동 해제
  */
 export function computeToggle(current: ReactionType[], type: ReactionType): ToggleResult {
   if (current.includes(type)) {

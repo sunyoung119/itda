@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { computeToggle, fetchMyReactions, persistReaction } from '../lib/reactions'
 import type { Post, ReactionType, User } from '../types'
 
-/** ⭐/✅/❓ 3개 반응 버튼 메타 (claude-code-prompt.md 반응 선택 시트) */
+/** ❤️/✅/🌱 3개 반응 버튼 메타 (claude-code-prompt.md 반응 선택 시트) */
 const META: {
   type: ReactionType
   emoji: string
@@ -12,7 +12,7 @@ const META: {
 }[] = [
   {
     type: 'star',
-    emoji: '⭐',
+    emoji: '❤️',
     label: '유용했어요',
     desc: '도움이 되는 인사이트네요',
     active: 'border-yellow bg-yellow-soft',
@@ -26,7 +26,7 @@ const META: {
   },
   {
     type: 'question',
-    emoji: '❓',
+    emoji: '🌱',
     label: '상황 다름',
     desc: '내 케이스에선 다른 결과였어요',
     active: 'border-blue bg-blue-soft',

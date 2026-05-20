@@ -5,6 +5,13 @@ import type { User } from '../types'
 
 const STEPS = ['입력 분석 중…', '카테고리 분류 중…', '핵심 요약 생성 중…']
 
+type PostType = 'knowhow' | 'question' | 'relief'
+const POST_TYPES: { value: PostType; emoji: string; label: string }[] = [
+  { value: 'knowhow', emoji: '💡', label: '노하우' },
+  { value: 'question', emoji: '❓', label: '질문' },
+  { value: 'relief', emoji: '🎍', label: '해우소' },
+]
+
 /** [6] 자연어 입력 — 작성 → Gemini 구조화 → DB 저장 */
 export function Compose({ user, onPosted }: { user: User; onPosted: () => void }) {
   const [text, setText] = useState('')
@@ -12,6 +19,7 @@ export function Compose({ user, onPosted }: { user: User; onPosted: () => void }
   const [stepIdx, setStepIdx] = useState(0)
   const [result, setResult] = useState<StructureResult | null>(null)
   const [error, setError] = useState('')
+  const [postType, setPostType] = useState<PostType>('knowhow')
 
   const busy = phase === 'processing'
   const canSubmit = text.trim().length >= 5 && !busy
@@ -47,9 +55,27 @@ export function Compose({ user, onPosted }: { user: User; onPosted: () => void }
 
   return (
     <div className="flex flex-1 flex-col gap-2 overflow-hidden">
-      <div className="flex items-center justify-between">
-        <div className="text-sm font-extrabold tracking-tight">💭 떠오른 생각을 적어주세요</div>
-        <span className="rounded-md bg-coral-soft px-2 py-0.5 text-[10px] font-extrabold text-coral-dark">
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex gap-1">
+          {POST_TYPES.map((t) => {
+            const on = postType === t.value
+            return (
+              <button
+                key={t.value}
+                type="button"
+                onClick={() => setPostType(t.value)}
+                className={`rounded-lg border-[1.5px] px-2 py-1 text-[11px] font-extrabold transition ${
+                  on
+                    ? 'border-coral bg-coral-soft text-coral-dark'
+                    : 'border-border bg-card text-ink-soft'
+                }`}
+              >
+                {t.emoji} {t.label}
+              </button>
+            )
+          })}
+        </div>
+        <span className="flex-shrink-0 rounded-md bg-coral-soft px-2 py-0.5 text-[10px] font-extrabold text-coral-dark">
           AI 자동 정리
         </span>
       </div>
