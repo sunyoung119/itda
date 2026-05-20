@@ -65,11 +65,13 @@ export function MyGrowth({ user, refreshSignal }: { user: User; refreshSignal: n
           <span>
             🌱 <span className="text-[13px] font-black text-ink">{stats?.questions ?? 0}</span>
           </span>
-          <span className="text-border">｜</span>
-          <span className="rounded-full border-2 border-green bg-green-soft px-2.5 py-0.5 text-[#166534]">
-            <span className="text-[13px] font-black">{stats?.helpedCount ?? 0}</span>명에게 도움
-          </span>
         </div>
+      </div>
+
+      <div className="flex flex-shrink-0 items-center self-stretch rounded-2xl border-[3px] border-green bg-green-soft px-4 text-[#166534]">
+        <span className="whitespace-nowrap text-[13px] font-black">
+          {stats?.helpedCount ?? 0}명에게 도움
+        </span>
       </div>
     </div>
   )
