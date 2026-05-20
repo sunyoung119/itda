@@ -36,7 +36,7 @@ const POST_TYPES: {
   },
   {
     value: 'relief',
-    emoji: '🎍',
+    emoji: '😮‍💨',
     label: '해우소',
     chipOn: 'border-green bg-green-soft text-[#166534]',
     field: 'border-green bg-green-soft/60 focus:border-[#16A34A]',
