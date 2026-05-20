@@ -44,9 +44,12 @@ export default function App() {
       />
 
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* 상단 50% — 스크롤 */}
-        <main className="no-scrollbar flex-1 overflow-y-auto bg-bg px-[18px] pb-3">
+        {/* 이번 주 화두 — 고정 */}
+        <div className="flex-shrink-0 bg-bg px-[18px]">
           <WeeklyTopic />
+        </div>
+        {/* 상단 50% — 스크롤 */}
+        <main className="subtle-scrollbar flex-1 overflow-y-auto bg-bg px-[18px] pb-3">
           <NoticeCard />
           {filterOn && (
             <div className="mt-3 flex items-center gap-2 rounded-[10px] border border-coral-soft bg-coral-soft/50 px-3 py-2">
