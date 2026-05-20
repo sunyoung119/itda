@@ -66,7 +66,7 @@ export function MyGrowth({ user, refreshSignal }: { user: User; refreshSignal: n
             🌱 <span className="text-[13px] font-black text-ink">{stats?.questions ?? 0}</span>
           </span>
           <span className="text-border">｜</span>
-          <span className="ml-auto rounded-full bg-green-soft px-2 py-0.5 text-[#166534]">
+          <span className="ml-auto rounded-full border border-green bg-green-soft px-2 py-0.5 text-[#166534]">
             <span className="text-[13px] font-black">{stats?.helpedCount ?? 0}</span>명에게 도움
           </span>
         </div>
