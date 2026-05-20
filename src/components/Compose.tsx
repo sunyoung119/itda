@@ -14,6 +14,8 @@ const POST_TYPES: {
   chipOn: string
   /** 글 종류에 맞춘 입력창 색 (배경·테두리·focus) */
   field: string
+  /** 종류별 placeholder 예시 */
+  placeholder: string
 }[] = [
   {
     value: 'knowhow',
@@ -21,6 +23,8 @@ const POST_TYPES: {
     label: '노하우',
     chipOn: 'border-yellow bg-yellow-soft text-[#92400E]',
     field: 'border-yellow bg-yellow-soft/60 focus:border-[#F59E0B]',
+    placeholder:
+      "예: 정신질환 의심 신고는 '지금 어디 계세요'보다 '주변에 뭐가 보이세요'라고 물으면 위치 특정이 더 빠름",
   },
   {
     value: 'question',
@@ -28,6 +32,7 @@ const POST_TYPES: {
     label: '질문',
     chipOn: 'border-coral bg-coral-soft text-coral-dark',
     field: 'border-coral bg-coral-soft/60 focus:border-coral-dark',
+    placeholder: '예: 강서구에 새로 생긴 백화점이 어디였죠?',
   },
   {
     value: 'relief',
@@ -35,6 +40,7 @@ const POST_TYPES: {
     label: '해우소',
     chipOn: 'border-green bg-green-soft text-[#166534]',
     field: 'border-green bg-green-soft/60 focus:border-[#16A34A]',
+    placeholder: '예: 마지막 신고가 머리에서 안 떠나요. 잠이 안 와요.',
   },
 ]
 
@@ -141,7 +147,7 @@ export function Compose({ user, onPosted }: { user: User; onPosted: () => void }
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="예: 정신질환 의심 신고는 '지금 어디 계세요'보다 '주변에 뭐가 보이세요'라고 물으면 위치 특정이 더 빠름"
+          placeholder={activeType.placeholder}
           className={`flex-1 resize-none rounded-[14px] border-[1.5px] p-3 text-[13px] leading-relaxed text-ink shadow-soft outline-none transition-colors placeholder:text-ink-muted ${activeType.field}`}
         />
       )}
