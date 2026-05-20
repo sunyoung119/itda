@@ -42,7 +42,7 @@ export function TopList({
   return (
     <section>
       <div className="mb-2 mt-3.5 flex items-center justify-between">
-        <h2 className="text-[15px] font-extrabold tracking-tight">🔥 오늘 가장 빛난 지혜</h2>
+        <h2 className="text-[15px] font-extrabold tracking-tight">✨ 오늘 가장 빛난 지혜</h2>
         <span className="text-xs font-semibold text-ink-muted">전체 ›</span>
       </div>
 
