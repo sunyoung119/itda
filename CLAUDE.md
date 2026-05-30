@@ -27,9 +27,9 @@ These cross-cutting rules are easy to get wrong; the full SQL and prompt text li
 
 - **AI dynamic categories.** Categories are not a fixed enum. Before each Gemini call, query the existing `categories` table and inject the list into the prompt so the AI reuses an existing category when one fits, or coins a new 2–4 char Korean noun otherwise. On post creation, increment `post_count` for matched categories or `INSERT` new ones. A category created within the last 24h renders a `NEW` badge.
 
-- **The 🌉 "bridge" concept.** A reaction is a "bridge" when the reacting user's `role` differs from the post's `author_role` (cross-role knowledge transfer). This is detected by a `BEFORE INSERT` Postgres trigger (`check_bridge_reaction`), which sets `reactions.is_bridge` and bumps `posts.bridge_count`. Do not compute this in the frontend.
+- **The 🔗 "bridge" concept.** A reaction is a "bridge" when the reacting user's `role` differs from the post's `author_role` (cross-role knowledge transfer). This is detected by a `BEFORE INSERT` Postgres trigger (`check_bridge_reaction`), which sets `reactions.is_bridge` and bumps `posts.bridge_count`. Do not compute this in the frontend.
 
-- **Reaction integrity.** One user may give at most one of each reaction type per post (`UNIQUE(post_id, user_id, type)`). ⭐ and ✅ can coexist; pressing ❓ must first `DELETE` any existing ⭐ for that user/post (handled in the frontend, before the ❓ insert). Reaction writes are also toggles — pressing an existing reaction removes it.
+- **Reaction integrity.** One user may give at most one of each reaction type per post (`UNIQUE(post_id, user_id, type)`). ❤️ and ✅ can coexist; pressing 🌱 must first `DELETE` any existing ❤️ for that user/post (handled in the frontend, before the 🌱 insert). Reaction writes are also toggles — pressing an existing reaction removes it.
 
 - **Denormalized counters.** `posts.star_count / verified_count / question_count / bridge_count` and `users.total_*` are maintained alongside reaction inserts/deletes (bridge_count via the trigger above). Keep them in sync on every reaction change.
 
